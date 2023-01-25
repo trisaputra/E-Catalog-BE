@@ -18,13 +18,13 @@ class Category extends Model
         'name', 'slug', 'image'
     ];
 
-    /**
-     * products
-     *
-     * @return void
-     */
-    public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
+    // /**
+    //  * products
+    //  *
+    //  * @return void
+    //  */
+    // public function products()
+    // {
+    //     return $this->hasMany(Product::class);
+    // }
 }

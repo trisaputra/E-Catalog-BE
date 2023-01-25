@@ -18,13 +18,13 @@ class Customer extends Model
         'name', 'email', 'email', 'email_verified_at', 'password', 'remember_token'
     ];
 
-    /**
-     * invoice
-     *
-     * @return void
-     */
-    public function invoices()
-    {
-        return $this->hasMany(Invoice::class);
-    }
+    // /**
+    //  * invoice
+    //  *
+    //  * @return void
+    //  */
+    // public function invoices()
+    // {
+    //     return $this->hasMany(Invoice::class);
+    // }
 }
