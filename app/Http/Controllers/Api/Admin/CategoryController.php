@@ -23,7 +23,7 @@ class CategoryController extends Controller
         $categories = Category::when(request()->q, function($categories) {
             $categories = $categories->where('name', 'like', '%'. request()->q . '%');
         })->latest()->paginate(5);
-        
+
         //return with Api Resource
         return new CategoryResource(true, 'List Data Categories', $categories);
     }
@@ -74,7 +74,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::whereId($id)->first();
-        
+
         if($category) {
             //return success with Api Resource
             return new CategoryResource(true, 'Detail Data Category!', $category);
@@ -106,7 +106,7 @@ class CategoryController extends Controller
 
             //remove old image
             Storage::disk('local')->delete('public/categories/'.basename($category->image));
-        
+
             //upload new image
             $image = $request->file('image');
             $image->storeAs('public/categories', $image->hashName());

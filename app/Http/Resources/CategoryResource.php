@@ -18,7 +18,7 @@ class CategoryResource extends JsonResource
      * @param  mixed $resource
      * @return void
      */
-    public function _construct($status, $message, $resource)
+    public function __construct($status, $message, $resource)
     {
         parent::__construct($resource);
         $this->status  = $status;
