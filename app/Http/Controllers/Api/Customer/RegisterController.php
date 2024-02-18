@@ -10,15 +10,15 @@ use App\Http\Resources\CustomerResource;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
-{
+{    
     /**
      * store
      *
      * @param  mixed $request
      * @return void
      */
-
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'name'     => 'required|string|max:255',
             'email'    => 'required|email|unique:customers',
